@@ -40,6 +40,27 @@ class Portfolio {
                 navToggle.classList.remove('active');
             }
         });
+        
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            }
+        });
+        
+        // Prevent body scroll when mobile menu is open
+        const toggleBodyScroll = () => {
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        };
+        
+        // Update body scroll when menu toggles
+        const observer = new MutationObserver(toggleBodyScroll);
+        observer.observe(navMenu, { attributes: true, attributeFilter: ['class'] });
 
         // Update active nav link on scroll
         this.updateActiveNavLink();
