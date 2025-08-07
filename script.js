@@ -77,7 +77,7 @@ class Portfolio {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offsetTop = target.offsetTop - 70; // Account for fixed nav
+                    const offsetTop = target.offsetTop - 75; // Account for fixed nav
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
@@ -95,21 +95,22 @@ class Portfolio {
         window.addEventListener('scroll', () => {
             const scrollY = window.pageYOffset;
             
-            // Update navbar background opacity
+            // Add/remove scrolled class for enhanced navbar styling
             if (scrollY > 50) {
-                nav.style.background = 'rgba(255, 255, 255, 0.98)';
-                nav.style.backdropFilter = 'blur(15px)';
+                nav.classList.add('scrolled');
             } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.95)';
-                nav.style.backdropFilter = 'blur(10px)';
+                nav.classList.remove('scrolled');
             }
 
-            // Hide/show navbar on scroll (optional)
+            // Hide/show navbar on scroll (optional - disabled for better UX)
+            // Uncomment below if you want auto-hiding navbar
+            /*
             if (scrollY > lastScrollY && scrollY > 200) {
                 nav.style.transform = 'translateY(-100%)';
             } else {
                 nav.style.transform = 'translateY(0)';
             }
+            */
             
             lastScrollY = scrollY;
         });
