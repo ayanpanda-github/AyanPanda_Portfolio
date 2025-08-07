@@ -1,0 +1,41 @@
+{
+  "name": "ayan-panda-portfolio",
+  "version": "1.0.0",
+  "description": "Modern, lightweight portfolio website for Ayan Panda",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server --port=3000 --open=index.html",
+    "build": "echo 'No build process needed - static files ready for deployment'",
+    "deploy:netlify": "npx netlify deploy --prod --dir .",
+    "deploy:vercel": "npx vercel --prod",
+    "lighthouse": "npx lighthouse http://localhost:3000 --view",
+    "validate": "npx html-validate index.html"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "developer",
+    "html",
+    "css",
+    "javascript",
+    "responsive",
+    "modern"
+  ],
+  "author": {
+    "name": "Ayan Panda",
+    "email": "your.email@example.com",
+    "url": "https://github.com/ayanpanda-github"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ayanpanda-github/portfolio.git"
+  },
+  "homepage": "https://ayanpanda-github.github.io/portfolio",
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
