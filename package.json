@@ -4,6 +4,8 @@
   "description": "Modern, lightweight portfolio website for Ayan Panda",
   "main": "index.html",
   "scripts": {
+    "build:blogs": "node scripts/buildBlogs.js",
+    "predeploy": "npm run build:blogs",
     "start": "npx serve .",
     "dev": "npx live-server --port=3000 --open=index.html",
     "build": "echo 'No build process needed - static files ready for deployment'",
