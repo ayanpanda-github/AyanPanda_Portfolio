@@ -4,15 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blog Post - Ayan Panda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css" />
+  <script>try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
 </head>
 
 <body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+
   <!-- Navigation -->
-  <nav class="nav">
+  <nav class="nav scrolled">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">Ayan Panda</a>
-      <div class="nav-menu">
+      <a href="index.html" class="nav-logo"><span class="logo-mark">AP</span><span class="logo-text">Ayan Panda</span></a>
+      <div class="nav-actions">
         <a href="index.html" class="nav-link">Home</a>
         <a href="blog.html" class="nav-link active">Blog</a>
       </div>
@@ -22,16 +30,20 @@
   <!-- Blog Content -->
   <section class="projects" style="padding-top: 120px;">
     <div class="container">
-      <h2 id="post-title" class="section-title"></h2>
-      <div id="post-content" 
-        style="max-width:800px;margin:0 auto;font-size:1.1rem;line-height:1.8;">
+      <div class="post-body">
+        <a href="blog.html" class="back-link"><i class="fas fa-arrow-left"></i> All posts</a>
+        <div class="section-head">
+          <span class="eyebrow" id="post-date"></span>
+          <h2 id="post-title" class="section-title"></h2>
+        </div>
+        <div id="post-content"></div>
       </div>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Ayan Panda. Built with ❤️</p>
+      <p>&copy; 2026 Ayan Panda</p>
     </div>
   </footer>
 

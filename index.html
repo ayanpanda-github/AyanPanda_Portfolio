@@ -3,205 +3,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayan Panda - Full Stack Developer</title>
-    <meta name="description" content="Ayan Panda's portfolio - Full Stack Developer specializing in Java, Python, and modern web technologies">
-    
-    <!-- Fonts -->
+    <title>Ayan Panda · Software & Platform Engineer</title>
+    <meta name="description" content="Ayan Panda — Programmer Analyst at Cognizant, L3 platform engineer for MuleSoft Runtime Fabric, MOSIP C4GT DMP 2026 open source contributor, and full stack / backend developer.">
+    <meta property="og:title" content="Ayan Panda · Software & Platform Engineer">
+    <meta property="og:description" content="Backend, cloud & platform engineering. Kubernetes, MuleSoft RTF, Python, Node.js, Java.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/132666440?v=4">
+    <meta name="theme-color" content="#0b0d17">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // Apply saved theme before paint to avoid a flash
+        try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
 </head>
 <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">Ayan Panda</a>
+            <a href="#home" class="nav-logo"><span class="logo-mark">AP</span><span class="logo-text">Ayan Panda</span></a>
             <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#opensource" class="nav-link">Open Source</a>
                 <a href="#projects" class="nav-link">Projects</a>
+                <a href="#github" class="nav-link">GitHub</a>
                 <a href="#skills" class="nav-link">Skills</a>
-                <a href="#contact" class="nav-link">Contact</a>
                 <a href="blog.html" class="nav-link">Blog</a>
-
+                <a href="#contact" class="nav-link nav-cta">Contact</a>
             </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">
+                    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                </button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
+                <div class="status-pill"><span class="pulse"></span> Programmer Analyst @ Cognizant</div>
                 <h1 class="hero-title">
                     Hi, I'm <span class="gradient-text">Ayan Panda</span>
                 </h1>
-                <p class="hero-subtitle">Full Stack Developer</p>
+                <p class="hero-subtitle">
+                    <span class="mono">&gt;</span> <span id="typed-role">Platform Engineer</span><span class="caret">|</span>
+                </p>
                 <p class="hero-description">
-                    I build modern web applications and work with cutting-edge technologies 
-                    to create efficient, scalable solutions.
+                    I build backend services, distributed data pipelines and cloud platforms — from Kubernetes clusters
+                    running MuleSoft Runtime Fabric to privacy-first digital identity flows for MOSIP.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View My Work</a>
+                    <a href="#contact" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Get In Touch</a>
                 </div>
                 <div class="hero-social">
-                    <a href="https://github.com/ayanpanda-github" target="_blank" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ayan-panda/" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
+                    <a href="https://github.com/ayanpanda-github" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ayan-panda/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:ayan.panda.inbox@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <span class="hero-location"><i class="fas fa-location-dot"></i> Barrackpore, West Bengal, India</span>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="hero-avatar">
-                    <img src="https://avatars.githubusercontent.com/u/132666440?v=4" alt="Ayan Panda" class="avatar-img">
+            <div class="hero-visual">
+                <div class="avatar-ring">
+                    <img src="https://avatars.githubusercontent.com/u/132666440?v=4" alt="Ayan Panda" class="avatar-img" width="280" height="280">
+                </div>
+                <div class="terminal">
+                    <div class="terminal-bar"><span></span><span></span><span></span><em>~/ayan</em></div>
+<pre class="terminal-body"><span class="t-prompt">$</span> whoami
+<span class="t-out">ayan.panda — software &amp; platform engineer</span>
+<span class="t-prompt">$</span> kubectl get stack
+<span class="t-key">backend</span>   python · node · java
+<span class="t-key">platform</span>  k8s · helm · mulesoft rtf
+<span class="t-key">cloud</span>     azure · aws · gcp</pre>
+                </div>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat"><strong data-count="8.55" data-decimals="2">0</strong><span>B.Tech CGPA</span></div>
+            <div class="hero-stat"><strong><span data-count="30" id="stat-repos">0</span>+</strong><span>Public repos</span></div>
+            <div class="hero-stat"><strong><span data-count="70">0</span></strong><span>Member club led</span></div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">01 · About</span>
+                <h2 class="section-title">Engineer across the stack, from API to cluster</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>
+                        I'm a software engineer with a B.Tech in Computer Science from <strong>VIT Bhopal</strong>, now working
+                        on cloud and enterprise systems at <strong>Cognizant</strong>. Day to day I'm an L3 platform engineer for
+                        MuleSoft Runtime Fabric — provisioning Kubernetes clusters, upgrading RTF agents with Helm and rtfctl,
+                        shipping Mule APIs through Jenkins, and hardening mTLS and secrets.
+                    </p>
+                    <p>
+                        Before that I built backend services and data pipelines in Python, Node.js and Java, including a
+                        hybrid recommendation engine and an offline-first health records platform that reached the
+                        final round of the <strong>MOSIP Decode Hackathon</strong>. This year I'm contributing to MOSIP through the
+                        <strong>C4GT Dedicated Mentoring Program</strong>, building privacy and right-to-deletion flows.
+                    </p>
+                    <p>I care about systems that are fast, observable, and responsible with people's data.</p>
+                </div>
+                <div class="about-cards">
+                    <div class="mini-card reveal"><i class="fas fa-server"></i><h3>Backend &amp; APIs</h3><p>FastAPI, Express, Spring Boot, PostgreSQL, Redis</p></div>
+                    <div class="mini-card reveal"><i class="fas fa-dharmachakra"></i><h3>Platform &amp; Cloud</h3><p>Kubernetes, Helm, MuleSoft RTF, Azure, AWS, GCP</p></div>
+                    <div class="mini-card reveal"><i class="fas fa-shield-halved"></i><h3>Identity &amp; Security</h3><p>eSignet / OIDC, OAuth 2.0, Entra ID, mTLS, AES</p></div>
+                    <div class="mini-card reveal"><i class="fas fa-brain"></i><h3>Data &amp; AI</h3><p>Spark MLlib, LangChain, RAG, computer vision</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Experience -->
+    <section id="experience" class="section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
+            <div class="section-head">
+                <span class="eyebrow">02 · Experience</span>
+                <h2 class="section-title">Where I've been building</h2>
+            </div>
+            <div class="timeline">
+                <article class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="card">
+                        <div class="card-top">
+                            <div>
+                                <h3>Programmer Analyst Trainee</h3>
+                                <p class="org"><i class="fas fa-building"></i> Cognizant Technology Solutions · Chennai</p>
+                            </div>
+                            <span class="badge badge-live">Feb 2026 – Present</span>
+                        </div>
+                        <p>Trained across multi-cloud (Azure, AWS, GCP), virtualization (VMware, Hyper-V, Citrix, Azure VDI), Microsoft 365, Active Directory, Windows Server and Linux, plus ITSM and monitoring tools (ServiceNow, SolarWinds, Zenoss, SCCM) aligned with ITIL. Cleared every assessment on the first attempt.</p>
+
+                        <div class="subproject">
+                            <div class="subproject-head">
+                                <h4><i class="fas fa-cubes"></i> MuleSoft Runtime Fabric — L3 Platform Engineer</h4>
+                                <span class="badge">Ongoing</span>
+                            </div>
+                            <ul>
+                                <li>Own cluster provisioning and lifecycle across cloud and on-prem Kubernetes, linking clusters to the Anypoint control plane.</li>
+                                <li>Upgrade and maintain the RTF agent with Helm and rtfctl; manage Mule Enterprise runtime license keys.</li>
+                                <li>Deploy Mule APIs and patches through Jenkins CI/CD; automate releases with Mule Maven Plugin and Anypoint CLI.</li>
+                                <li>Harden security with secrets protection, truststores, mTLS and workload data isolation; run day-2 ops, backups and diagnostics.</li>
+                            </ul>
+                            <div class="tags"><span>Kubernetes</span><span>Helm</span><span>rtfctl</span><span>Jenkins</span><span>Anypoint CLI</span><span>mTLS</span></div>
+                        </div>
+
+                        <div class="subproject">
+                            <div class="subproject-head">
+                                <h4><i class="fas fa-desktop"></i> Windows 365 Migration Support</h4>
+                                <span class="badge badge-done">Completed</span>
+                            </div>
+                            <ul>
+                                <li>Supported an enterprise client's migration of end users from Citrix VDI to Windows 365 Cloud PCs.</li>
+                                <li>Provided hypercare after cutover; troubleshot MFA, connectivity and application issues to restore access.</li>
+                            </ul>
+                            <div class="tags"><span>Windows 365</span><span>Citrix VDI</span><span>MFA</span><span>Entra ID</span></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="card">
+                        <div class="card-top">
+                            <div>
+                                <h3>Chief of Operations — Cyber Warrior Club</h3>
+                                <p class="org"><i class="fas fa-users"></i> VIT Bhopal University</p>
+                            </div>
+                            <span class="badge">Aug 2022 – Jul 2024</span>
+                        </div>
+                        <ul>
+                            <li>Led a 70-member cybersecurity club and ran 6+ workshops and events with 200–500 participants each.</li>
+                            <li>Coordinated technical, logistics and comms teams of 10–15 volunteers per event.</li>
+                            <li>Built automated event setup workflows that cut preparation time by 30%.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="card">
+                        <div class="card-top">
+                            <div>
+                                <h3>B.Tech, Computer Science Engineering</h3>
+                                <p class="org"><i class="fas fa-graduation-cap"></i> VIT Bhopal University · CGPA 8.55/10</p>
+                            </div>
+                            <span class="badge">Aug 2021 – Oct 2025</span>
+                        </div>
+                        <p>Kendriya Vidyalaya, Faridabad — Class XII 90.67%, Class X 89%.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Source -->
+    <section id="opensource" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">03 · Open Source</span>
+                <h2 class="section-title">Contributing to digital public infrastructure</h2>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-left">
+                    <div class="feature-badges">
+                        <span class="badge badge-live">DMP 2026</span>
+                        <span class="badge">C4GT</span>
+                        <span class="badge">Remote</span>
+                    </div>
+                    <h3>MOSIP — Collab Enhancements</h3>
                     <p>
-                        I'm a passionate Full Stack Developer with experience in building modern web applications
-                        and backend services. I enjoy working with various technologies and am always eager to learn
-                        and implement new solutions.
+                        Selected for the C4GT Dedicated Mentoring Program to improve <strong>MOSIP Collab</strong>, the open
+                        environment where the community tests MOSIP digital identity flows, working with MOSIP mentors.
                     </p>
-                    <p>
-                        My expertise spans across multiple programming languages including Java, Python, and TypeScript,
-                        with a focus on creating efficient, scalable applications that solve real-world problems.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>25+</h3>
-                            <p>Public Repositories</p>
-                        </div>
-                        <div class="stat">
-                            <h3>2+</h3>
-                            <p>Years Coding</p>
-                        </div>
-                        <div class="stat">
-                            <h3>∞</h3>
-                            <p>Learning</p>
-                        </div>
+                    <ul class="check-list">
+                        <li>Built a <strong>“Delete My Data”</strong> flow: eSignet authentication, explicit consent, and deletion of the UIN, VIDs, handles and linked demographic data.</li>
+                        <li>Handled the full lifecycle — already-deleted detection, live status page, retries, timeouts, and blocking auth/downloads/notifications for deleted UINs.</li>
+                        <li>Kept an encrypted deletion registry (UIN, reason, timestamp) for audit and right-to-deletion compliance.</li>
+                        <li>Added a post-registration call-to-action and fixed email templates so URLs render as clickable links.</li>
+                    </ul>
+                    <div class="feature-links">
+                        <a class="btn btn-primary" href="https://github.com/aritraroy02/Mosip-uin-deletion" target="_blank" rel="noopener"><i class="fab fa-github"></i> Mosip-uin-deletion</a>
+                        <a class="btn btn-outline" href="https://github.com/mosip/mosip-labs" target="_blank" rel="noopener"><i class="fab fa-github"></i> mosip/mosip-labs</a>
+                        <a class="btn btn-outline" href="https://github.com/mosip/mosip-helm/issues/818" target="_blank" rel="noopener"><i class="fas fa-circle-dot"></i> mosip/mosip-helm#818</a>
+                    </div>
+                </div>
+                <div class="feature-right">
+                    <div class="flow">
+                        <div class="flow-step"><i class="fas fa-fingerprint"></i><span>eSignet login</span></div>
+                        <div class="flow-arrow"></div>
+                        <div class="flow-step"><i class="fas fa-file-signature"></i><span>Consent</span></div>
+                        <div class="flow-arrow"></div>
+                        <div class="flow-step"><i class="fas fa-trash-can"></i><span>Delete UIN &amp; VIDs</span></div>
+                        <div class="flow-arrow"></div>
+                        <div class="flow-step"><i class="fas fa-lock"></i><span>Encrypted audit log</span></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid" id="projects-grid">
-                <!-- Projects will be loaded dynamically -->
-            </div>
-            <div class="projects-footer">
-                <a href="https://github.com/ayanpanda-github" target="_blank" class="btn btn-outline">
-                    View All Projects on GitHub
-                </a>
+            <div class="achievement-row">
+                <div class="achievement reveal"><i class="fas fa-trophy"></i><div><h4>MOSIP Decode Hackathon — Finalist</h4><p>3rd edition, Aug–Nov 2025. Recognised for scalability and inclusiveness of ChildHealthBooklet.</p></div></div>
+                <div class="achievement reveal"><i class="fab fa-github"></i><div><h4>GitHub Achievements</h4><p>Pull Shark and YOLO badges across <span class="js-repo-count">30</span> public repositories.</p></div></div>
+                <div class="achievement reveal"><i class="fas fa-certificate"></i><div><h4>Certifications</h4><p>AI &amp; ML (SmartInternz) · MERN Stack (Ethnus) · Google Professional Security Engineer (in progress)</p></div></div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <!-- Projects -->
+    <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="section-head">
+                <span class="eyebrow">04 · Projects</span>
+                <h2 class="section-title">Things I've built</h2>
+            </div>
+            <div class="filter-bar" id="project-filters">
+                <button class="chip active" data-filter="all">All</button>
+                <button class="chip" data-filter="backend">Backend</button>
+                <button class="chip" data-filter="web">Web</button>
+                <button class="chip" data-filter="ai">AI / ML</button>
+                <button class="chip" data-filter="security">Security</button>
+            </div>
+            <div class="projects-grid" id="projects-grid"></div>
+        </div>
+    </section>
+
+    <!-- GitHub -->
+    <section id="github" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">05 · GitHub</span>
+                <h2 class="section-title">Live from GitHub</h2>
+            </div>
+            <div class="gh-stats" id="gh-stats">
+                <div class="gh-stat"><i class="fas fa-book"></i><strong id="gh-repos">30</strong><span>Public repos</span></div>
+                <div class="gh-stat"><i class="fas fa-star"></i><strong id="gh-stars">–</strong><span>Stars earned</span></div>
+                <div class="gh-stat"><i class="fas fa-code"></i><strong id="gh-langs">–</strong><span>Languages used</span></div>
+            </div>
+            <div class="gh-split">
+                <div class="card reveal">
+                    <h3><i class="fas fa-clock-rotate-left"></i> Recently updated</h3>
+                    <div class="recent-repos" id="recent-repos"><div class="contrib-loading">Loading repositories…</div></div>
+                </div>
+                <div class="card reveal">
+                    <h3><i class="fas fa-chart-pie"></i> Top languages</h3>
+                    <div class="lang-bars" id="lang-bars"><div class="contrib-loading">Loading languages…</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">06 · Skills</span>
+                <h2 class="section-title">Toolbox</h2>
+            </div>
             <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Java</span>
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">TypeScript</span>
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">HTML/CSS</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Frameworks & Tools</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">FastAPI</span>
-                        <span class="skill-item">Spring Boot</span>
-                        <span class="skill-item">React</span>
-                        <span class="skill-item">Node.js</span>
-                        <span class="skill-item">Git</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Databases</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">PostgreSQL</span>
-                        <span class="skill-item">MySQL</span>
-                        <span class="skill-item">MongoDB</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Others</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Machine Learning</span>
-                        <span class="skill-item">Computer Vision</span>
-                        <span class="skill-item">Microservices</span>
-                        <span class="skill-item">REST APIs</span>
-                    </div>
-                </div>
+                <div class="skill-category reveal"><h3><i class="fas fa-code"></i> Languages</h3><div class="skill-items"><span>Python</span><span>Java</span><span>JavaScript</span><span>TypeScript</span><span>SQL</span><span>C#</span><span>Bash</span><span>PowerShell</span></div></div>
+                <div class="skill-category reveal"><h3><i class="fas fa-server"></i> Backend</h3><div class="skill-items"><span>FastAPI</span><span>Django</span><span>Flask</span><span>Node.js</span><span>Express</span><span>Spring Boot</span><span>.NET Core</span></div></div>
+                <div class="skill-category reveal"><h3><i class="fab fa-react"></i> Frontend</h3><div class="skill-items"><span>React</span><span>Redux</span><span>PWA</span><span>WebRTC</span><span>HTML/CSS</span></div></div>
+                <div class="skill-category reveal"><h3><i class="fas fa-database"></i> Data</h3><div class="skill-items"><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Redis</span><span>Firebase</span><span>IndexedDB</span></div></div>
+                <div class="skill-category reveal"><h3><i class="fas fa-dharmachakra"></i> Platform &amp; DevOps</h3><div class="skill-items"><span>Kubernetes</span><span>Helm</span><span>Docker</span><span>Jenkins</span><span>GitHub Actions</span><span>MuleSoft RTF</span><span>Anypoint CLI</span></div></div>
+                <div class="skill-category reveal"><h3><i class="fas fa-cloud"></i> Cloud &amp; Endpoint</h3><div class="skill-items"><span>Azure</span><span>AWS</span><span>GCP</span><span>Windows 365</span><span>Intune</span><span>Autopilot</span><span>VMware</span><span>Citrix</span></div></div>
+                <div class="skill-category reveal"><h3><i class="fas fa-user-shield"></i> Identity &amp; Security</h3><div class="skill-items"><span>Entra ID</span><span>Conditional Access</span><span>OAuth 2.0</span><span>eSignet / OIDC</span><span>mTLS</span><span>AES</span><span>Wireshark</span></div></div>
+                <div class="skill-category reveal"><h3><i class="fas fa-brain"></i> AI / ML</h3><div class="skill-items"><span>LangChain</span><span>LLMs</span><span>RAG</span><span>OpenAI APIs</span><span>Spark MLlib</span><span>Computer Vision</span></div></div>
+                <div class="skill-category reveal"><h3><i class="fas fa-vial"></i> Testing &amp; Ops</h3><div class="skill-items"><span>PyTest</span><span>JUnit</span><span>Selenium</span><span>Postman</span><span>ServiceNow</span><span>SolarWinds</span><span>ITIL</span></div></div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Contact -->
+    <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title">Let's Work Together</h2>
-            <div class="contact-content">
-                <p class="contact-description">
-                    I'm always open to discussing new opportunities, interesting projects,
-                    or just having a chat about technology.
-                </p>
+            <div class="contact-card reveal">
+                <span class="eyebrow">07 · Contact</span>
+                <h2>Let's build something together</h2>
+                <p>Open to backend, platform and cloud engineering roles, open-source collaborations, or just a chat about tech.</p>
                 <div class="contact-links">
-                    <a href="mailto:your.email@example.com" class="contact-link">
-                        <i class="fas fa-envelope"></i>
-                        <span>Send me an email</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ayan-panda/" target="_blank" class="contact-link">
-                        <i class="fab fa-linkedin"></i>
-                        <span>Connect on LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/ayanpanda-github" target="_blank" class="contact-link">
-                        <i class="fab fa-github"></i>
-                        <span>Follow on GitHub</span>
-                    </a>
+                    <button class="contact-link" id="copy-email" data-email="ayan.panda.inbox@gmail.com">
+                        <i class="fas fa-envelope"></i><span>ayan.panda.inbox@gmail.com</span><em class="copy-hint">Copy</em>
+                    </button>
+                    <a href="https://www.linkedin.com/in/ayan-panda/" target="_blank" rel="noopener" class="contact-link"><i class="fab fa-linkedin"></i><span>Connect on LinkedIn</span></a>
+                    <a href="https://github.com/ayanpanda-github" target="_blank" rel="noopener" class="contact-link"><i class="fab fa-github"></i><span>Follow on GitHub</span></a>
                 </div>
+                <p class="languages">Speaks English · Hindi · Bengali</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Ayan Panda. Built with ❤️ and modern web technologies.</p>
+            <p>&copy; <span id="year">2026</span> Ayan Panda · Hand-built with HTML, CSS &amp; vanilla JS · Hosted on Vercel</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
     <script src="config.js"></script>
     <script src="script.js"></script>
 </body>

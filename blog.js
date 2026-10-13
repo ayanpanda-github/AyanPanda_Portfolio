@@ -20,11 +20,12 @@ async function loadBlogs() {
 
       div.innerHTML = `
         <div class="project-header">
-          <h3 class="project-title">${escapeHtml(post.title)}</h3>
-          <div class="project-links"><span class="project-tech">${escapeHtml(post.date)}</span></div>
+          <div class="project-icon"><i class="fas fa-pen-nib"></i></div>
+          <span class="project-tech">${escapeHtml(post.date)}</span>
         </div>
-        <p class="project-description">${escapeHtml(post.description)}</p>
-        <a class="btn btn-primary" href="post.html?file=${encodeURIComponent(post.file)}">Read More</a>
+        <h3 class="project-title">${escapeHtml(post.title)}</h3>
+        <p class="project-description">${escapeHtml(post.description)}…</p>
+        <a class="btn btn-secondary" href="post.html?file=${encodeURIComponent(post.file)}">Read post <i class="fas fa-arrow-right"></i></a>
       `;
 
       container.appendChild(div);
